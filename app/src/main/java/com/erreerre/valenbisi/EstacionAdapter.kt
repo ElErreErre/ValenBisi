@@ -34,9 +34,9 @@ class EstacionAdapter(private val estaciones: List<Estacion>) :
         // ▸ Aquí: cambiar color de la tarjeta
         val card = holder.itemView as MaterialCardView
         val color = when {
-            estacion.bicisDisponibles == 0 -> Color.RED
-            estacion.bicisDisponibles < 5 -> Color.YELLOW
-            else -> Color.GREEN
+            estacion.bicisDisponibles == 0 -> Color.parseColor("#19183B")
+            estacion.bicisDisponibles in 1..4 -> Color.parseColor("#708993")
+            else -> Color.parseColor("#A1C2BD")
         }
         card.setCardBackgroundColor(color)
 
